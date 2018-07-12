@@ -3,6 +3,7 @@
    License: none (public domain)
 */
 
+/* ---- RESET ---- */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -46,3 +47,60 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+
+/* ---- STYLING ----*/
+
+body {
+	background-color: #9999c5;
+}
+
+#container {
+	margin: auto; /* centers container. */
+	width: 440px;
+	background-color: #fff;
+	font-family: Helvetica;
+	border: 8px solid #77669d;
+	border-radius: 10px;
+	margin-top: 20px;
+	padding: 18px;
+}
+
+#container #buttons {
+	overflow: auto; /* To make sure #container truly holds #buttons */
+	font-size: 15px;
+}
+
+/* Each list element: */
+#container #buttons li {
+	--button-height: 80px;
+
+	float: left;
+	background-color: #e2daf1;
+	width: 23%; 	/* Set each element to 23% of parent #container to allow for spacing. */
+	height: var(--button-height);
+	text-align: center;
+	line-height: var(--button-height); 
+	margin-bottom: 10px;
+	margin-right: 11px;	/* Inspect in broswer to see breaking point for four-in-a-row alignment. */
+	border-radius: 5px;
+	cursor: pointer;
+	box-shadow: 0px 3px 1px #9c8bbd; /* Offset from left, offset from top, width, color. */
+}
+
+/* The most-right (every fourth) buttons should not push anything -> their right margin is zero. */
+#container #buttons li:nth-child(4n) {
+	margin-right: 0px;
+	background-color: #e5f1cd;
+	font-size: 20px;
+}
+
+#container #buttons li:active {
+	box-shadow: 0px 0px 0px #9c8bbd;
+	margin-top: 3px;
+	margin-bottom: 7px;
+}
+
+
+
+
